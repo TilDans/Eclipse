@@ -13,7 +13,7 @@ public class FileClient {
         
         try ( 
                     Socket sock = new Socket(host, SERVER_PORT);
-                    BufferedOutputStream toFile = new BufferedOutputStream(new FileOutputStream("C://Kram Studium/kurs1618/workspaceKurseinheit/src/KE7/" + fileNameAtClient)); ) {
+                    BufferedOutputStream toFile = new BufferedOutputStream(new FileOutputStream("C://" + fileNameAtClient)); ) {
             
             // Ausgabestrom öffnen, zum Server schreiben
             BufferedWriter toServer = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));

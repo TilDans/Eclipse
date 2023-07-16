@@ -17,7 +17,7 @@ public class FileServer {
                       if (!request.startsWith("GET ")) throw new IllegalArgumentException();
                       
                       String filename = request.substring(4);
-                      fromFile = new BufferedInputStream(new FileInputStream("C://Kram Studium/kurs1618/workspaceKurseinheit/src/KE7/" + filename));
+                      fromFile = new BufferedInputStream(new FileInputStream("C://" + filename));
                       
                       BufferedOutputStream toclient = new BufferedOutputStream(sock.getOutputStream());
                       int data = -1;
@@ -34,7 +34,7 @@ public class FileServer {
                 System.out.println("Es gab einen Fehler in der Übertragung " + e.getMessage());
             } finally {
                 if (fromFile != null) fromFile.close();
-                System.out.println("Server wurde beendet.");
+                System.out.println("Prozess wurde beendet.");
             }
         }
     }
